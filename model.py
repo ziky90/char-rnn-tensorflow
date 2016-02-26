@@ -4,6 +4,7 @@ from tensorflow.models.rnn import seq2seq
 
 import numpy as np
 
+
 class Model():
     def __init__(self, args, infer=False):
         self.args = args
@@ -85,5 +86,3 @@ class Model():
             ret += pred
             char = pred
         return ret
-
-
