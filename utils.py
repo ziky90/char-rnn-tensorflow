@@ -3,6 +3,7 @@ import collections
 import cPickle
 import numpy as np
 
+
 class TextLoader():
     def __init__(self, data_dir, batch_size, seq_length):
         self.data_dir = data_dir
@@ -53,7 +54,6 @@ class TextLoader():
         self.x_batches = np.split(xdata.reshape(self.batch_size, -1), self.num_batches, 1)
         self.y_batches = np.split(ydata.reshape(self.batch_size, -1), self.num_batches, 1)
 
-
     def next_batch(self):
         x, y = self.x_batches[self.pointer], self.y_batches[self.pointer]
         self.pointer += 1
@@ -61,4 +61,3 @@ class TextLoader():
 
     def reset_batch_pointer(self):
         self.pointer = 0
-
